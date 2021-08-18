@@ -1,0 +1,15 @@
+This directory is an NCS project directory.
+
+The directory content in . has been generated through
+the invocation of:
+
+# /opt/ncs-5.5.1/bin/ncs-setup --dest . --ned-package /opt/ncs-5.5.1/packages/neds/cisco-ios-cli-6.69 --ned-package /opt/ncs-5.5.1/packages/neds/cisco-iosxr-cli-7.33 --ned-package /opt/ncs-5.5.1/packages/neds/cisco-nx-cli-5.21 --ned-package /opt/ncs-5.5.1/packages/neds/cisco-asa-cli-6.12
+
+The following commands can be used to interact with NCS in this directory:
+
+# ncs -c ./ncs.conf                         -- to start NCS as a daemon
+# ncs -c ./ncs.conf --foreground --verbose  -- start NCS in foregound
+# ncs --stop                                -- stop NCS
+# ncs_cli -u admin                          -- start a CLI into NCS
+# ncs-setup --eclipse-setup                 -- create eclipse dev files here
+

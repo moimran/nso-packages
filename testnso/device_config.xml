@@ -1,0 +1,1982 @@
+<config xmlns="http://tail-f.com/ns/config/1.0">
+  <devices xmlns="http://tail-f.com/ns/ncs">
+    <device>
+      <name>CSR</name>
+      <address>192.168.122.123</address>
+      <port>22</port>
+      <ssh>
+        <host-key>
+          <algorithm>ssh-rsa</algorithm>
+          <key-data>AAAAB3NzaC1yc2EAAAADAQABAAABAQDBpm8igGMkj+g2AQ3vkM46ZSKl7jwQkTWOSsBiT+67
+JBPzy7dP+1I49gvcAevRwVvTZuDiwfsn9tTrM11UIvo8LX+Z/MvfiZJy9Qh9M9wLVHukCafw
+n6bOjS4/CAl7jV/j8/d2vZZ1OY73Ek4w/YMJG4ncZ9HFBVgz9D9ITF569U0DtxFNAqNT4Q3w
+u9/v4nyBRN6cjHmFoflniSQE1grBKJQW/81QAyn4aAfafzu8h6LSvTqC8Gq0JchnDQFALtma
+WnSiHuibpEtczOztnSro9g8r8DbP1egJvM39/W439RrKLxFK2aEYdv0z4+6DOBqPZlHjgvui
++Ht2DI5wHO7t</key-data>
+        </host-key>
+      </ssh>
+      <authgroup>mygroup</authgroup>
+      <device-type>
+        <cli>
+          <ned-id xmlns:cisco-ios-cli-6.69="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.69">cisco-ios-cli-6.69:cisco-ios-cli-6.69</ned-id>
+        </cli>
+      </device-type>
+      <state>
+        <admin-state>unlocked</admin-state>
+      </state>
+      <config>
+        <hostname xmlns="urn:ios">csr1</hostname>
+        <tailfned xmlns="urn:ios">
+          <police>cirmode</police>
+        </tailfned>
+        <version xmlns="urn:ios">16.12</version>
+        <service xmlns="urn:ios">
+          <timestamps>
+            <debug>
+              <datetime>
+                <msec/>
+              </datetime>
+            </debug>
+            <log>
+              <datetime>
+                <msec/>
+              </datetime>
+            </log>
+          </timestamps>
+          <call-home/>
+        </service>
+        <login xmlns="urn:ios">
+          <on-success>
+            <log/>
+          </on-success>
+        </login>
+        <platform xmlns="urn:ios">
+          <console>serial</console>
+          <punt-keepalive>
+            <disable-kernel-core>true</disable-kernel-core>
+          </punt-keepalive>
+          <qfp>
+            <utilization>
+              <monitor>
+                <load>80</load>
+              </monitor>
+            </utilization>
+          </qfp>
+        </platform>
+        <aaa xmlns="urn:ios">
+          <new-model/>
+          <authorization>
+            <exec>
+              <name>default</name>
+              <local/>
+            </exec>
+          </authorization>
+          <session-id>common</session-id>
+        </aaa>
+        <call-home xmlns="urn:ios">
+          <contact-email-addr>sch-smart-licensing@cisco.com</contact-email-addr>
+          <profile>
+            <name>CiscoTAC-1</name>
+            <active>true</active>
+            <reporting>
+              <smart-licensing-data>true</smart-licensing-data>
+            </reporting>
+            <destination>
+              <transport-method>
+                <http/>
+                <email>false</email>
+              </transport-method>
+            </destination>
+          </profile>
+        </call-home>
+        <ip xmlns="urn:ios">
+          <domain>
+            <name>networkdev.tech</name>
+          </domain>
+          <forward-protocol>
+            <nd/>
+          </forward-protocol>
+          <http>
+            <server>true</server>
+            <authentication>
+              <local/>
+            </authentication>
+            <secure-server>true</secure-server>
+            <client>
+              <source-interface>
+                <GigabitEthernet>1</GigabitEthernet>
+              </source-interface>
+            </client>
+          </http>
+        </ip>
+        <subscriber xmlns="urn:ios">
+          <templating>true</templating>
+        </subscriber>
+        <multilink xmlns="urn:ios">
+          <bundle-name>authenticated</bundle-name>
+        </multilink>
+        <username xmlns="urn:ios">
+          <name>moimran</name>
+          <privilege>15</privilege>
+          <password>
+            <type>0</type>
+            <secret>moimran@123</secret>
+          </password>
+        </username>
+        <redundancy xmlns="urn:ios"></redundancy>
+        <crypto xmlns="urn:ios">
+          <pki>
+            <trustpoint>
+              <id>SLA-TrustPoint</id>
+              <enrollment>
+                <pkcs12/>
+              </enrollment>
+              <revocation-check>crl</revocation-check>
+            </trustpoint>
+            <trustpoint>
+              <id>TP-self-signed-1630864210</id>
+              <enrollment>
+                <selfsigned/>
+              </enrollment>
+              <subject-name>cn=IOS-Self-Signed-Certificate-1630864210</subject-name>
+              <revocation-check>none</revocation-check>
+              <rsakeypair>
+                <key-label>TP-self-signed-1630864210</key-label>
+              </rsakeypair>
+            </trustpoint>
+            <certificate>
+              <chain>
+                <name>SLA-TrustPoint</name>
+                <certificate>
+                  <serial>01</serial>
+                  <cert-type>ca</cert-type>
+                  <cert>  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 &#13;
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 &#13;
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 &#13;
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 &#13;
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 &#13;
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 &#13;
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D &#13;
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 &#13;
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE &#13;
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC &#13;
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 &#13;
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 &#13;
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 &#13;
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 &#13;
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 &#13;
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 &#13;
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 &#13;
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 &#13;
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B &#13;
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 &#13;
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C &#13;
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B &#13;
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 &#13;
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB &#13;
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 &#13;
+  D697DF7F 28&#13;
+                  </cert>
+                </certificate>
+              </chain>
+              <chain>
+                <name>TP-self-signed-1630864210</name>
+                <certificate>
+                  <serial>01</serial>
+                  <cert-type>self-signed</cert-type>
+                  <cert>  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 &#13;
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 &#13;
+  69666963 6174652D 31363330 38363432 3130301E 170D3231 30373238 30383138 &#13;
+  33375A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 &#13;
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D31 36333038 &#13;
+  36343231 30308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 &#13;
+  0A028201 0100C1A6 6F228063 248FE836 010DEF90 CE3A6522 A5EE3C10 91358E4A &#13;
+  C0624FEE BB2413F3 CBB74FFB 5238F60B DC01EBD1 C15BD366 E0E2C1FB 27F6D4EB &#13;
+  335D5422 FA3C2D7F 99FCCBDF 899272F5 087D33DC 0B547BA4 09A7F09F A6CE8D2E &#13;
+  3F08097B 8D5FE3F3 F776BD96 75398EF7 124E30FD 83091B89 DC67D1C5 055833F4 &#13;
+  3F484C5E 7AF54D03 B7114D02 A353E10D F0BBDFEF E27C8144 DE9C8C79 85A1F967 &#13;
+  892404D6 0AC12894 16FFCD50 0329F868 07DA7F3B BC87A2D2 BD3A82F0 6AB425C8 &#13;
+  670D0140 2ED99A5A 74A21EE8 9BA44B5C CCECED9D 2AE8F60F 2BF036CF D5E809BC &#13;
+  CDFDFD6E 37F51ACA 2F114AD9 A11876FD 33E3EE83 381A8F66 51E382FB A2F87B76 &#13;
+  0C8E701C EEED0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF &#13;
+  301F0603 551D2304 18301680 14A73170 699D0977 7365E05A 380F4043 B9F6E84D &#13;
+  BA301D06 03551D0E 04160414 A7317069 9D097773 65E05A38 0F4043B9 F6E84DBA &#13;
+  300D0609 2A864886 F70D0101 05050003 82010100 50716C40 3BF8A96C 80BB3406 &#13;
+  80DBDBEF BF3AF3C8 2CC30287 07BB85BA 3180D929 5C182A87 1210E856 91CE4913 &#13;
+  DA87439B 82F5C017 E358FED8 2DA79490 DF6541F0 67FA2C27 99A5F31A 9265B776 &#13;
+  242A2AB1 44FDC23D C9952B7D FA0373F3 0844350E D3EA0D59 77DB981F C0889CDD &#13;
+  1FFD8164 974FEC16 461118D6 AC1779F4 18878923 E4CACDAD BBA4EE9E 32544BA2 &#13;
+  65993A27 8E2E0909 98B5A8D6 593CA55B 37F5246F 23AA73DC C70E4C43 E90B7858 &#13;
+  08F3465E E3FCA2BD 766C5898 2929F866 7163B0A2 5FBFD179 5B7233D8 091FCFE7 &#13;
+  87887B5D 990E24B0 12E0B412 4F10CAF2 E5E3D468 06447E32 5A29EA3A 6C5D613F &#13;
+  4DA854BD 9D84160C 20A07A20 68E1365A 02E348AD&#13;
+                  </cert>
+                </certificate>
+              </chain>
+            </certificate>
+          </pki>
+        </crypto>
+        <interface xmlns="urn:ios">
+          <GigabitEthernet>
+            <name>0/0</name>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>1</name>
+            <description>***NSO MANAGEMENT INTERFACE***</description>
+            <negotiation>
+              <auto>true</auto>
+            </negotiation>
+            <mop>
+              <xenabled>false</xenabled>
+              <sysid>false</sysid>
+            </mop>
+            <ip>
+              <address>
+                <primary>
+                  <address>192.168.122.123</address>
+                  <mask>255.255.255.0</mask>
+                </primary>
+              </address>
+            </ip>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>2</name>
+            <negotiation>
+              <auto>true</auto>
+            </negotiation>
+            <mop>
+              <xenabled>false</xenabled>
+              <sysid>false</sysid>
+            </mop>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>3</name>
+            <negotiation>
+              <auto>true</auto>
+            </negotiation>
+            <mop>
+              <xenabled>false</xenabled>
+              <sysid>false</sysid>
+            </mop>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>4</name>
+            <negotiation>
+              <auto>true</auto>
+            </negotiation>
+            <mop>
+              <xenabled>false</xenabled>
+              <sysid>false</sysid>
+            </mop>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+          </GigabitEthernet>
+        </interface>
+        <control-plane xmlns="urn:ios"></control-plane>
+        <line xmlns="urn:ios">
+          <console>
+            <first>0</first>
+            <stopbits>1</stopbits>
+          </console>
+          <vty>
+            <first>0</first>
+            <last>4</last>
+            <transport>
+              <input>ssh</input>
+            </transport>
+          </vty>
+          <vty>
+            <first>5</first>
+            <last>14</last>
+            <transport>
+              <input>ssh</input>
+            </transport>
+          </vty>
+        </line>
+        <logging xmlns="urn:ios">
+          <buffered>
+            <severity-level>debugging</severity-level>
+          </buffered>
+          <console>
+            <severity-level>debugging</severity-level>
+          </console>
+          <monitor>
+            <severity-level>debugging</severity-level>
+          </monitor>
+        </logging>
+        <spanning-tree xmlns="urn:ios">
+          <extend>
+            <system-id/>
+          </extend>
+        </spanning-tree>
+        <diagnostic xmlns="urn:ios">
+          <bootup>
+            <level>minimal</level>
+          </bootup>
+        </diagnostic>
+        <restconf xmlns="urn:ios"/>
+        <netconf-yang-enable xmlns="urn:ios">
+          <netconf-yang/>
+        </netconf-yang-enable>
+        <snmp-server xmlns="urn:ios">
+          <community>
+            <name>cisco123</name>
+            <RO/>
+          </community>
+        </snmp-server>
+        <memory xmlns="urn:ios">
+          <free>
+            <low-watermark>
+              <processor>72329</processor>
+            </low-watermark>
+          </free>
+        </memory>
+      </config>
+    </device>
+    <device>
+      <name>IOSv</name>
+      <address>192.168.122.41</address>
+      <port>22</port>
+      <ssh>
+        <host-key>
+          <algorithm>ssh-rsa</algorithm>
+          <key-data>AAAAB3NzaC1yc2EAAAADAQABAAABAQC/g/NHCLV9eBpRmNXs6Y6D4SVBQo7baVtzeywjOGD4
+sXA+uF4gRUIMhiwMrUlXrdRfC5uakjTYIF94AW8fHRkv7Wo9ekoV5VI1p+LdeQUpNnijbBQP
+lAwiVY5XA8halgUvW3d97HbNGwzB5Uzc3JSssNp5akZQFq465lVXHKjiJjFw3JWJofzbWX1T
+waD9Ei7EsnXAUJuDxPzFPvvyaV5G7F/2W3hcvns80s3PSXPpQQRcjWlffEyrg415qJB1A9cA
+RwLmuVrNXR5GkNyPJEouCFma47dmS+10qFLz0dxcaDhZS6gzV23XJLy3A7QTdk3IJRzKiR1w
+e73OOpvInFNX</key-data>
+        </host-key>
+      </ssh>
+      <authgroup>mygroup</authgroup>
+      <device-type>
+        <cli>
+          <ned-id xmlns:cisco-ios-cli-6.69="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.69">cisco-ios-cli-6.69:cisco-ios-cli-6.69</ned-id>
+        </cli>
+      </device-type>
+      <state>
+        <admin-state>unlocked</admin-state>
+      </state>
+      <config>
+        <hostname xmlns="urn:ios">iosv</hostname>
+        <tailfned xmlns="urn:ios">
+          <police>cirmode</police>
+        </tailfned>
+        <version xmlns="urn:ios">15.6</version>
+        <service xmlns="urn:ios">
+          <timestamps>
+            <debug>
+              <datetime>
+                <msec/>
+              </datetime>
+            </debug>
+            <log>
+              <datetime>
+                <msec/>
+              </datetime>
+            </log>
+          </timestamps>
+        </service>
+        <cdp xmlns="urn:ios">
+          <run>false</run>
+        </cdp>
+        <ip xmlns="urn:ios">
+          <cef-conf>
+            <cef/>
+          </cef-conf>
+          <domain>
+            <lookup-conf>
+              <lookup>false</lookup>
+            </lookup-conf>
+            <name>networkdev.tech</name>
+          </domain>
+          <tcp>
+            <synwait-time>5</synwait-time>
+          </tcp>
+          <forward-protocol>
+            <nd/>
+          </forward-protocol>
+          <http>
+            <server>false</server>
+            <secure-server>false</secure-server>
+          </http>
+        </ip>
+        <multilink xmlns="urn:ios">
+          <bundle-name>authenticated</bundle-name>
+        </multilink>
+        <username xmlns="urn:ios">
+          <name>moimran</name>
+          <privilege>15</privilege>
+          <password>
+            <type>0</type>
+            <secret>moimran@123</secret>
+          </password>
+        </username>
+        <redundancy xmlns="urn:ios"></redundancy>
+        <interface xmlns="urn:ios">
+          <GigabitEthernet>
+            <name>0/0</name>
+            <media-type>rj45</media-type>
+            <speed>auto</speed>
+            <duplex>auto</duplex>
+            <cdp>
+              <enable>false</enable>
+            </cdp>
+            <ip>
+              <address>
+                <primary>
+                  <address>192.168.122.41</address>
+                  <mask>255.255.255.0</mask>
+                </primary>
+              </address>
+            </ip>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>0/1</name>
+            <media-type>rj45</media-type>
+            <speed>auto</speed>
+            <duplex>auto</duplex>
+            <cdp>
+              <enable>false</enable>
+            </cdp>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>0/2</name>
+            <media-type>rj45</media-type>
+            <speed>auto</speed>
+            <duplex>auto</duplex>
+            <cdp>
+              <enable>false</enable>
+            </cdp>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>0/3</name>
+            <media-type>rj45</media-type>
+            <speed>auto</speed>
+            <duplex>auto</duplex>
+            <cdp>
+              <enable>false</enable>
+            </cdp>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+            <shutdown/>
+          </GigabitEthernet>
+        </interface>
+        <ethernet xmlns="urn:ios">
+          <lmi>
+            <ce/>
+          </lmi>
+        </ethernet>
+        <banner xmlns="urn:ios">
+          <exec>&#13;
+**************************************************************************&#13;
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *&#13;
+* education. IOSv is provided as-is and is not supported by Cisco's      *&#13;
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *&#13;
+* of the IOSv Software or Documentation to any third party for any       *&#13;
+* purposes is expressly prohibited except as otherwise authorized by     *&#13;
+* Cisco in writing.                                                      *&#13;
+**************************************************************************</exec>
+          <incoming>&#13;
+**************************************************************************&#13;
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *&#13;
+* education. IOSv is provided as-is and is not supported by Cisco's      *&#13;
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *&#13;
+* of the IOSv Software or Documentation to any third party for any       *&#13;
+* purposes is expressly prohibited except as otherwise authorized by     *&#13;
+* Cisco in writing.                                                      *&#13;
+**************************************************************************</incoming>
+          <login>&#13;
+**************************************************************************&#13;
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *&#13;
+* education. IOSv is provided as-is and is not supported by Cisco's      *&#13;
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *&#13;
+* of the IOSv Software or Documentation to any third party for any       *&#13;
+* purposes is expressly prohibited except as otherwise authorized by     *&#13;
+* Cisco in writing.                                                      *&#13;
+**************************************************************************</login>
+        </banner>
+        <control-plane xmlns="urn:ios"></control-plane>
+        <line xmlns="urn:ios">
+          <console>
+            <first>0</first>
+            <exec-timeout>
+              <minutes>0</minutes>
+            </exec-timeout>
+            <logging>
+              <synchronous></synchronous>
+            </logging>
+            <privilege>
+              <level>15</level>
+            </privilege>
+          </console>
+          <aux>
+            <first>0</first>
+            <exec-timeout>
+              <minutes>0</minutes>
+            </exec-timeout>
+            <logging>
+              <synchronous></synchronous>
+            </logging>
+            <privilege>
+              <level>15</level>
+            </privilege>
+          </aux>
+          <vty>
+            <first>0</first>
+            <last>4</last>
+            <login>
+              <local/>
+            </login>
+            <transport>
+              <input>ssh</input>
+            </transport>
+          </vty>
+          <vty>
+            <first>5</first>
+            <last>14</last>
+            <login>
+              <local/>
+            </login>
+            <transport>
+              <input>ssh</input>
+            </transport>
+          </vty>
+        </line>
+        <logging xmlns="urn:ios">
+          <buffered>
+            <severity-level>debugging</severity-level>
+          </buffered>
+          <console>
+            <severity-level>debugging</severity-level>
+          </console>
+          <monitor>
+            <severity-level>debugging</severity-level>
+          </monitor>
+        </logging>
+        <process xmlns="urn:ios">
+          <cpu>
+            <autoprofile>
+              <hog>false</hog>
+            </autoprofile>
+          </cpu>
+        </process>
+        <snmp-server xmlns="urn:ios">
+          <community>
+            <name>cisco123</name>
+            <RO/>
+          </community>
+        </snmp-server>
+      </config>
+    </device>
+    <device>
+      <name>NXv-1</name>
+      <address>192.168.122.81</address>
+      <port>22</port>
+      <ssh>
+        <host-key>
+          <algorithm>ssh-rsa</algorithm>
+          <key-data>AAAAB3NzaC1yc2EAAAADAQABAAAAgQCqRZxjfzl/pHGMh7xRs1Wruiadsrd6qq90EqKpIbpF M23nlLrOc7hEFtSb6f0QBKGtQ55KTlW6DaEuGpqMJSsR10tHa/xvrNunIHkc4iW9kcvQDaZ4 Ov7mKBVnOiiBnUBP6RXvsKte9aIlRd1B1OVp0D8G7xOZq+x0pncwQT4YaQ==</key-data>
+        </host-key>
+      </ssh>
+      <authgroup>mygroup</authgroup>
+      <device-type>
+        <cli>
+          <ned-id xmlns:cisco-nx-cli-5.21="http://tail-f.com/ns/ned-id/cisco-nx-cli-5.21">cisco-nx-cli-5.21:cisco-nx-cli-5.21</ned-id>
+        </cli>
+      </device-type>
+      <state>
+        <admin-state>unlocked</admin-state>
+      </state>
+      <config>
+        <tailfned xmlns="http://tail-f.com/ned/cisco-nx">
+          <default-lacp-suspend-individual>true</default-lacp-suspend-individual>
+        </tailfned>
+        <version xmlns="http://tail-f.com/ned/cisco-nx">9.3(1) Bios:version</version>
+        <hostname xmlns="http://tail-f.com/ned/cisco-nx">NXv-1</hostname>
+        <feature xmlns="http://tail-f.com/ned/cisco-nx">
+          <restconf/>
+          <netconf/>
+        </feature>
+        <password xmlns="http://tail-f.com/ned/cisco-nx">
+          <strength-check>false</strength-check>
+        </password>
+        <username xmlns="http://tail-f.com/ned/cisco-nx">
+          <name>admin</name>
+          <password>
+            <encryption>5</encryption>
+            <password>$5$YZU1sUfg$O9XHJuUqbdYqzwbE0zPuaQ3CbXacpMXEYOpyCoUYLn.</password>
+          </password>
+          <role>network-admin</role>
+        </username>
+        <username xmlns="http://tail-f.com/ned/cisco-nx">
+          <name>moimran</name>
+          <password>
+            <encryption>5</encryption>
+            <password>$5$BRaax2zz$xDSQ9lBbl56f/3ggyaLEFuaOPEJWX/fDYmDXQroFOD5</password>
+          </password>
+          <role>network-admin</role>
+        </username>
+        <username-config xmlns="http://tail-f.com/ned/cisco-nx">
+          <username>
+            <name>moimran</name>
+            <passphrase>
+              <gracetime>3</gracetime>
+              <lifetime>99999</lifetime>
+              <warntime>14</warntime>
+            </passphrase>
+          </username>
+        </username-config>
+        <ip xmlns="http://tail-f.com/ned/cisco-nx">
+          <domain-name>networkdev.tech</domain-name>
+          <domain-lookup>true</domain-lookup>
+        </ip>
+        <copp xmlns="http://tail-f.com/ned/cisco-nx">
+          <profile>
+            <strict/>
+          </profile>
+        </copp>
+        <mac xmlns="http://tail-f.com/ned/cisco-nx">
+          <address-table>
+            <notification>
+              <mac-move>true</mac-move>
+            </notification>
+          </address-table>
+        </mac>
+        <crypto xmlns="http://tail-f.com/ned/cisco-nx">
+          <key>
+            <param>
+              <rsa>
+                <label>NXv-1.networkdev.tech</label>
+                <modulus>2048</modulus>
+              </rsa>
+            </param>
+          </key>
+        </crypto>
+        <snmp-server xmlns="http://tail-f.com/ned/cisco-nx">
+          <user>
+            <name>admin</name>
+            <auth>
+              <md5>0xf39eeeb842eeb3dab4b1b58ecd8563d8</md5>
+              <priv>
+                <passphrase-2>0xf39eeeb842eeb3dab4b1b58ecd8563d8</passphrase-2>
+              </priv>
+              <localizedkeyAlt/>
+              <engineID>128:0:0:9:3:12:244:61:110:112:0</engineID>
+            </auth>
+          </user>
+          <user>
+            <name>moimran</name>
+            <auth>
+              <md5>0xf39eeeb842eeb3dab4b1b58ecd8563d8</md5>
+              <priv>
+                <passphrase-2>0xf39eeeb842eeb3dab4b1b58ecd8563d8</passphrase-2>
+              </priv>
+              <localizedkeyAlt/>
+              <engineID>128:0:0:9:3:12:244:61:110:112:0</engineID>
+            </auth>
+          </user>
+        </snmp-server>
+        <rmon xmlns="http://tail-f.com/ned/cisco-nx">
+          <event>
+            <number>1</number>
+            <description>FATAL(1)</description>
+            <owner>PMON@FATAL</owner>
+          </event>
+          <event>
+            <number>2</number>
+            <description>CRITICAL(2)</description>
+            <owner>PMON@CRITICAL</owner>
+          </event>
+          <event>
+            <number>3</number>
+            <description>ERROR(3)</description>
+            <owner>PMON@ERROR</owner>
+          </event>
+          <event>
+            <number>4</number>
+            <description>WARNING(4)</description>
+            <owner>PMON@WARNING</owner>
+          </event>
+          <event>
+            <number>5</number>
+            <description>INFORMATION(5)</description>
+            <owner>PMON@INFO</owner>
+          </event>
+        </rmon>
+        <vlan xmlns="http://tail-f.com/ned/cisco-nx">
+          <vlan-list>
+            <id>1</id>
+          </vlan-list>
+        </vlan>
+        <vrf xmlns="http://tail-f.com/ned/cisco-nx">
+          <context>
+            <id>management</id>
+          </context>
+        </vrf>
+        <hardware xmlns="http://tail-f.com/ned/cisco-nx">
+          <qos>
+            <ns-buffer-profile>burst</ns-buffer-profile>
+          </qos>
+        </hardware>
+        <vdc xmlns="http://tail-f.com/ned/cisco-nx">
+          <vdc-list>
+            <name>NXv-1</name>
+            <id>1</id>
+            <limit-resource>
+              <vlan>
+                <minimum>16</minimum>
+                <maximum>4094</maximum>
+              </vlan>
+              <vrf>
+                <minimum>2</minimum>
+                <maximum>4096</maximum>
+              </vrf>
+              <port-channel>
+                <minimum>0</minimum>
+                <maximum>511</maximum>
+              </port-channel>
+              <u4route-mem>
+                <minimum>248</minimum>
+                <maximum>248</maximum>
+              </u4route-mem>
+              <u6route-mem>
+                <minimum>96</minimum>
+                <maximum>96</maximum>
+              </u6route-mem>
+              <m4route-mem>
+                <minimum>58</minimum>
+                <maximum>58</maximum>
+              </m4route-mem>
+              <m6route-mem>
+                <minimum>8</minimum>
+                <maximum>8</maximum>
+              </m6route-mem>
+            </limit-resource>
+          </vdc-list>
+        </vdc>
+        <interface xmlns="http://tail-f.com/ned/cisco-nx">
+          <mgmt>
+            <name>0</name>
+            <vrf>
+              <member>management</member>
+            </vrf>
+            <ip>
+              <address>
+                <ipaddr>192.168.122.81/24</ipaddr>
+              </address>
+            </ip>
+          </mgmt>
+          <Ethernet>
+            <name>1/1</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/10</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/100</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/101</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/102</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/103</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/104</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/105</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/106</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/107</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/108</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/109</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/11</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/110</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/111</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/112</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/113</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/114</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/115</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/116</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/117</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/118</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/119</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/12</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/120</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/121</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/122</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/123</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/124</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/125</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/126</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/127</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/128</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/13</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/14</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/15</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/16</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/17</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/18</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/19</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/2</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/20</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/21</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/22</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/23</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/24</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/25</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/26</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/27</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/28</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/29</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/3</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/30</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/31</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/32</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/33</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/34</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/35</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/36</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/37</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/38</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/39</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/4</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/40</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/41</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/42</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/43</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/44</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/45</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/46</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/47</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/48</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/49</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/5</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/50</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/51</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/52</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/53</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/54</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/55</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/56</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/57</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/58</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/59</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/6</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/60</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/61</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/62</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/63</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/64</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/65</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/66</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/67</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/68</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/69</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/7</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/70</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/71</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/72</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/73</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/74</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/75</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/76</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/77</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/78</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/79</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/8</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/80</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/81</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/82</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/83</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/84</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/85</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/86</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/87</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/88</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/89</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/9</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/90</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/91</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/92</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/93</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/94</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/95</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/96</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/97</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/98</name>
+          </Ethernet>
+          <Ethernet>
+            <name>1/99</name>
+          </Ethernet>
+        </interface>
+        <line xmlns="http://tail-f.com/ned/cisco-nx">
+          <vty></vty>
+        </line>
+        <logging xmlns="http://tail-f.com/ned/cisco-nx">
+          <monitor>5</monitor>
+          <module>5</module>
+          <console>2</console>
+        </logging>
+        <boot xmlns="http://tail-f.com/ned/cisco-nx">
+          <nxos>
+            <image>bootflash:/nxos.9.3.1.bin</image>
+          </nxos>
+        </boot>
+      </config>
+    </device>
+    <device>
+      <name>R1</name>
+      <address>192.168.122.42</address>
+      <port>22</port>
+      <ssh>
+        <host-key>
+          <algorithm>ssh-rsa</algorithm>
+          <key-data>AAAAB3NzaC1yc2EAAAADAQABAAABAQDPIdEtfL1K2anHU1L00BCLOD+YLdPaiK59NgbPESVx
++C5KPIT2PtKOQEOW5SJee/fKhxeHLlMZMH56qitXItNlzJLIk+J+924Ikc4OINOiGTfn0/hn
+MgiPprCzjt4MVc55SObuMdt52C3z2iAnzIqKiQ9eiPar3qTiQqaIVAB3TlT+Qd980FFFRO9T
+kk9AShb6qBYWrbRi0ZnTDoKF+MOZnmCJtaF53hK9IYq708/adIUoOM+sxy/aknTPb1ltdYDm
+mfB48gF1BdtztQ43LlWDCQS8aHRIqjG4xtoZmSclxb3xNPWqZG3cEI/sook1vFWyz/fe/YHR
+lDz2Js/YWz/R</key-data>
+        </host-key>
+      </ssh>
+      <authgroup>mygroup</authgroup>
+      <device-type>
+        <cli>
+          <ned-id xmlns:cisco-ios-cli-6.69="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.69">cisco-ios-cli-6.69:cisco-ios-cli-6.69</ned-id>
+        </cli>
+      </device-type>
+      <state>
+        <admin-state>unlocked</admin-state>
+      </state>
+      <config>
+        <hostname xmlns="urn:ios">R1</hostname>
+        <tailfned xmlns="urn:ios">
+          <police>cirmode</police>
+        </tailfned>
+        <version xmlns="urn:ios">12.4</version>
+        <service xmlns="urn:ios">
+          <timestamps>
+            <debug>
+              <datetime>
+                <msec/>
+              </datetime>
+            </debug>
+            <log>
+              <datetime>
+                <msec/>
+              </datetime>
+            </log>
+          </timestamps>
+        </service>
+        <ip xmlns="urn:ios">
+          <cef-conf>
+            <cef/>
+          </cef-conf>
+          <domain>
+            <lookup-conf>
+              <lookup>false</lookup>
+            </lookup-conf>
+            <name>networkdev.tech</name>
+          </domain>
+          <tcp>
+            <synwait-time>5</synwait-time>
+          </tcp>
+          <http>
+            <server>false</server>
+            <secure-server>false</secure-server>
+          </http>
+        </ip>
+        <username xmlns="urn:ios">
+          <name>moimran</name>
+          <privilege>15</privilege>
+          <password>
+            <type>0</type>
+            <secret>moimran@123</secret>
+          </password>
+        </username>
+        <interface xmlns="urn:ios">
+          <Ethernet>
+            <name>0/0</name>
+            <duplex>auto</duplex>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+            <shutdown/>
+          </Ethernet>
+          <Ethernet>
+            <name>1/0</name>
+            <duplex>half</duplex>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+            <shutdown/>
+          </Ethernet>
+          <Ethernet>
+            <name>1/1</name>
+            <duplex>half</duplex>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+            <shutdown/>
+          </Ethernet>
+          <Ethernet>
+            <name>1/2</name>
+            <duplex>half</duplex>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+            <shutdown/>
+          </Ethernet>
+          <Ethernet>
+            <name>1/3</name>
+            <duplex>half</duplex>
+            <ip>
+              <no-address>
+                <address>false</address>
+              </no-address>
+            </ip>
+            <shutdown/>
+          </Ethernet>
+          <GigabitEthernet>
+            <name>0/0</name>
+            <media-type>gbic</media-type>
+            <negotiation>
+              <auto>true</auto>
+            </negotiation>
+            <speed>1000</speed>
+            <duplex>full</duplex>
+            <ip>
+              <address>
+                <primary>
+                  <address>192.168.122.42</address>
+                  <mask>255.255.255.0</mask>
+                </primary>
+              </address>
+            </ip>
+          </GigabitEthernet>
+        </interface>
+        <control-plane xmlns="urn:ios"></control-plane>
+        <gatekeeper xmlns="urn:ios">
+          <shutdown/>
+        </gatekeeper>
+        <line xmlns="urn:ios">
+          <console>
+            <first>0</first>
+            <exec-timeout>
+              <minutes>0</minutes>
+            </exec-timeout>
+            <logging>
+              <synchronous></synchronous>
+            </logging>
+            <privilege>
+              <level>15</level>
+            </privilege>
+            <stopbits>1</stopbits>
+          </console>
+          <aux>
+            <first>0</first>
+            <exec-timeout>
+              <minutes>0</minutes>
+            </exec-timeout>
+            <logging>
+              <synchronous></synchronous>
+            </logging>
+            <privilege>
+              <level>15</level>
+            </privilege>
+            <stopbits>1</stopbits>
+          </aux>
+          <vty>
+            <first>0</first>
+            <last>4</last>
+            <login>
+              <local/>
+            </login>
+            <transport>
+              <input>ssh</input>
+            </transport>
+          </vty>
+          <vty>
+            <first>5</first>
+            <last>14</last>
+            <login>
+              <local/>
+            </login>
+            <transport>
+              <input>ssh</input>
+            </transport>
+          </vty>
+        </line>
+        <logging xmlns="urn:ios">
+          <buffered>
+            <severity-level>debugging</severity-level>
+          </buffered>
+          <console>
+            <severity-level>debugging</severity-level>
+          </console>
+          <monitor>
+            <severity-level>debugging</severity-level>
+          </monitor>
+        </logging>
+        <router xmlns="urn:ios">
+          <rip>
+            <network>
+              <ip>192.168.122.0</ip>
+            </network>
+          </rip>
+        </router>
+        <snmp-server xmlns="urn:ios">
+          <community>
+            <name>cisco123</name>
+            <RO/>
+          </community>
+        </snmp-server>
+      </config>
+    </device>
+    <device>
+      <name>XRv</name>
+      <address>192.168.122.53</address>
+      <port>22</port>
+      <ssh>
+        <host-key>
+          <algorithm>ssh-rsa</algorithm>
+          <key-data>AAAAB3NzaC1yc2EAAAADAQABAAABAQCMBI/Aj3hM/jg8M4uv4jQTVXImyUJXyiw3Uil4RJdJ
+CvXBVGCkNeoXpxnTxRMkLIs6NDFxpN6NNBJyh/J6hqZLHfwo4qMGqiLUxXIb153MIKlNQ/tP
+3u6yuVdpol6a3ZAazgdhuTWyjsjq9aGbzjrxIr2yvnoTue5qNj8nViTowXKEEIZJ8utcLhOp
+2h+jw0VVFWdMRvJjMeR6p9xAcNMUOB7TWabVbrIkJvpIxkM10rHNK94kWkMugW5h1XV0i7CY
+3ZawOmQ2d6uDR4TaiAzhhZoM+4HduSkFXqcYcRZF86VQZB2nzGgrS1Bhuc21CdJ1ZwsoOdTU
+5nTfRA1KL02/</key-data>
+        </host-key>
+      </ssh>
+      <authgroup>mygroup</authgroup>
+      <device-type>
+        <cli>
+          <ned-id xmlns:cisco-iosxr-cli-7.33="http://tail-f.com/ns/ned-id/cisco-iosxr-cli-7.33">cisco-iosxr-cli-7.33:cisco-iosxr-cli-7.33</ned-id>
+        </cli>
+      </device-type>
+      <state>
+        <admin-state>unlocked</admin-state>
+      </state>
+      <config>
+        <admin xmlns="http://tail-f.com/ned/cisco-ios-xr">
+          <username>
+            <name>moimran</name>
+            <group>
+              <name>root-system</name>
+            </group>
+            <secret>
+              <encryption>5</encryption>
+              <password>$1$VegP$WB6CtYuOArQaBkEa34xLk/</password>
+            </secret>
+          </username>
+        </admin>
+        <hostname xmlns="http://tail-f.com/ned/cisco-ios-xr">xrv1</hostname>
+        <domain xmlns="http://tail-f.com/ned/cisco-ios-xr">
+          <name>networkdev.tech</name>
+        </domain>
+        <netconf-yang xmlns="http://tail-f.com/ned/cisco-ios-xr">
+          <agent>
+            <ssh/>
+          </agent>
+        </netconf-yang>
+        <ssh xmlns="http://tail-f.com/ned/cisco-ios-xr">
+          <server>
+            <v2/>
+          </server>
+        </ssh>
+        <interface xmlns="http://tail-f.com/ned/cisco-ios-xr">
+          <MgmtEth>
+            <id>0/0/CPU0/0</id>
+            <ipv4>
+              <address>
+                <ip>192.168.122.53</ip>
+                <mask>255.255.255.0</mask>
+              </address>
+            </ipv4>
+          </MgmtEth>
+          <GigabitEthernet>
+            <id>0/0/0/0</id>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <id>0/0/0/1</id>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <id>0/0/0/2</id>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <id>0/0/0/3</id>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <id>0/0/0/4</id>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <id>0/0/0/5</id>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <id>0/0/0/6</id>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <id>0/0/0/7</id>
+            <shutdown/>
+          </GigabitEthernet>
+        </interface>
+        <router xmlns="http://tail-f.com/ned/cisco-ios-xr">
+          <static>
+            <address-family>
+              <ipv4>
+                <unicast>
+                  <routes-ip>
+                    <net>50.0.0.0/24</net>
+                    <address>192.168.122.1</address>
+                  </routes-ip>
+                </unicast>
+              </ipv4>
+            </address-family>
+          </static>
+        </router>
+        <xyzroot xmlns="http://tail-f.com/ned/cisco-ios-xr">0</xyzroot>
+      </config>
+    </device>
+    <device>
+      <name>asa-1</name>
+      <address>192.168.122.221</address>
+      <port>22</port>
+      <ssh>
+        <host-key>
+          <algorithm>ssh-rsa</algorithm>
+          <key-data>AAAAB3NzaC1yc2EAAAADAQABAAABAQC8UuBb4K4Qbill7PAJKRSyf+J+BuVixKF4pdAfTNmM
+btEGggyZu6rjwEKqD7eddjkYkfQILyEd49qiPbI/iY5PRbhZJDGulMiNbqwpj3FQDzrcrbCq
+L2QAKo5HCm/RnFaUKOtcVv2VUjDXGmcgFu0D3r6mhbCKKrNrbVStu6IIN3AOSeAH7+c/I+F5
+mbO3+nMXPPwneRwzli4Sd8CeaWxgzKtsUAln8y0asm9Kpz1YrMvz5KjDNJGM5xwvD1jHzbBL
+O2dLiDWMxyK+vqEvYxA0sieyrWCKT7aWV/9ClFHw0oUI1eGeZr6pkkocFS0sBPxeRXPB1uAU
+vCCw1UugPgPf</key-data>
+        </host-key>
+      </ssh>
+      <authgroup>mygroup</authgroup>
+      <device-type>
+        <cli>
+          <ned-id xmlns:cisco-asa-cli-6.12="http://tail-f.com/ns/ned-id/cisco-asa-cli-6.12">cisco-asa-cli-6.12:cisco-asa-cli-6.12</ned-id>
+        </cli>
+      </device-type>
+      <state>
+        <admin-state>unlocked</admin-state>
+      </state>
+      <config>
+        <hostname xmlns="http://cisco.com/ned/asa">asa1</hostname>
+        <service-policy xmlns="http://cisco.com/ned/asa">
+          <policy-map>global_policy</policy-map>
+          <global/>
+        </service-policy>
+        <domain-name xmlns="http://cisco.com/ned/asa">networkdev.tech</domain-name>
+        <enable xmlns="http://cisco.com/ned/asa">
+          <password>
+            <word>$sha512$5000$OYyHbfhHj4Gf7JN15u2bcw==$8vhsPEHk5ezqQ+0xVLkl6Q==</word>
+            <pbkdf2/>
+          </password>
+        </enable>
+        <names xmlns="http://cisco.com/ned/asa"/>
+        <ftp xmlns="http://cisco.com/ned/asa">
+          <mode>passive</mode>
+        </ftp>
+        <pager xmlns="http://cisco.com/ned/asa">
+          <lines>23</lines>
+        </pager>
+        <mtu xmlns="http://cisco.com/ned/asa">
+          <name>management</name>
+          <mtu-size>1500</mtu-size>
+        </mtu>
+        <dynamic-access-policy-record xmlns="http://cisco.com/ned/asa">
+          <name>DfltAccessPolicy</name>
+        </dynamic-access-policy-record>
+        <user-identity xmlns="http://cisco.com/ned/asa">
+          <default-domain>LOCAL</default-domain>
+        </user-identity>
+        <threat-detection xmlns="http://cisco.com/ned/asa">
+          <id>basic-threat</id>
+        </threat-detection>
+        <telnet xmlns="http://cisco.com/ned/asa">
+          <timeout>5</timeout>
+        </telnet>
+        <ssh xmlns="http://cisco.com/ned/asa">
+          <timeout>5</timeout>
+          <stricthostkeycheck/>
+          <version>2</version>
+          <allowed-access>
+            <address>0.0.0.0</address>
+            <mask>0.0.0.0</mask>
+            <interface>
+              <nameif>management</nameif>
+            </interface>
+          </allowed-access>
+        </ssh>
+        <username xmlns="http://cisco.com/ned/asa">
+          <name>moimran</name>
+          <password>
+            <password>$sha512$5000$qrZgq+3kwbE7I1V3n0LYrQ==$NqiF27EIY+R6BFllGIzPSg==</password>
+            <mode>pbkdf2</mode>
+            <privilege>15</privilege>
+          </password>
+        </username>
+        <asdm xmlns="http://cisco.com/ned/asa">
+          <history>
+            <enable>false</enable>
+          </history>
+        </asdm>
+        <failover-conf xmlns="http://cisco.com/ned/asa">
+          <failover>false</failover>
+        </failover-conf>
+        <interface xmlns="http://cisco.com/ned/asa">
+          <Management>
+            <name>0/0</name>
+            <ip>
+              <address>
+                <ip>
+                  <host-ip>192.168.122.221</host-ip>
+                  <netmask>255.255.255.0</netmask>
+                </ip>
+              </address>
+            </ip>
+            <nameif>management</nameif>
+            <security-level>100</security-level>
+          </Management>
+          <GigabitEthernet>
+            <name>0/0</name>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>0/1</name>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>0/2</name>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>0/3</name>
+            <shutdown/>
+          </GigabitEthernet>
+          <GigabitEthernet>
+            <name>0/4</name>
+            <shutdown/>
+          </GigabitEthernet>
+        </interface>
+        <class-map xmlns="http://cisco.com/ned/asa">
+          <name>inspection_default</name>
+          <match>
+            <default-inspection-traffic/>
+          </match>
+        </class-map>
+        <policy-map xmlns="http://cisco.com/ned/asa">
+          <name>global_policy</name>
+          <class>
+            <name>inspection_default</name>
+            <inspect>
+              <dns>
+                <policy-map-name>preset_dns_map</policy-map-name>
+              </dns>
+              <ftp></ftp>
+              <h323>
+                <h225/>
+                <ras/>
+              </h323>
+              <netbios/>
+              <rsh/>
+              <rtsp/>
+              <skinny/>
+              <esmtp/>
+              <sqlnet/>
+              <sunrpc/>
+              <tftp/>
+              <sip></sip>
+              <snmp/>
+              <ip-options/>
+            </inspect>
+          </class>
+        </policy-map>
+        <policy-map xmlns="http://cisco.com/ned/asa">
+          <name>migrated_dns_map_1</name>
+          <type>inspect</type>
+          <protocol>dns</protocol>
+          <parameters>
+            <message-length>
+              <maximum>
+                <client>auto</client>
+                <length>512</length>
+              </maximum>
+            </message-length>
+            <tcp-inspection>false</tcp-inspection>
+          </parameters>
+        </policy-map>
+        <policy-map xmlns="http://cisco.com/ned/asa">
+          <name>migrated_dns_map_2</name>
+          <type>inspect</type>
+          <protocol>dns</protocol>
+          <parameters>
+            <message-length>
+              <maximum>
+                <client>auto</client>
+                <length>512</length>
+              </maximum>
+            </message-length>
+            <tcp-inspection>false</tcp-inspection>
+          </parameters>
+        </policy-map>
+        <policy-map xmlns="http://cisco.com/ned/asa">
+          <name>preset_dns_map</name>
+          <type>inspect</type>
+          <protocol>dns</protocol>
+          <parameters>
+            <message-length>
+              <maximum>
+                <client>auto</client>
+                <length>512</length>
+              </maximum>
+            </message-length>
+            <tcp-inspection>false</tcp-inspection>
+          </parameters>
+        </policy-map>
+        <aaa xmlns="http://cisco.com/ned/asa">
+          <authentication>
+            <ssh>
+              <console>
+                <LOCAL/>
+              </console>
+            </ssh>
+            <login-history-duration>
+              <login-history></login-history>
+            </login-history-duration>
+          </authentication>
+        </aaa>
+        <route xmlns="http://cisco.com/ned/asa">
+          <id>management</id>
+          <net>50.0.0.0</net>
+          <net-mask>255.255.255.0</net-mask>
+          <gw>192.168.122.1</gw>
+          <metric>1</metric>
+        </route>
+        <monitor-interface xmlns="http://cisco.com/ned/asa">
+          <service-module>false</service-module>
+        </monitor-interface>
+        <icmp xmlns="http://cisco.com/ned/asa">
+          <unreachable>
+            <rate-limit>1</rate-limit>
+            <burst-size>1</burst-size>
+          </unreachable>
+        </icmp>
+        <crypto xmlns="http://cisco.com/ned/asa">
+          <ca>
+            <certificate>
+              <chain>
+                <name>_SmartCallHome_ServerCA</name>
+                <certificate>
+                  <serial>0a0142800000014523c844b500000002</serial>
+                  <cert-type>ca</cert-type>
+                  <cert>    30820560 30820348 a0030201 0202100a 01428000 00014523 c844b500 00000230 &#13;
+    0d06092a 864886f7 0d01010b 0500304a 310b3009 06035504 06130255 53311230 &#13;
+    10060355 040a1309 4964656e 54727573 74312730 25060355 0403131e 4964656e &#13;
+    54727573 7420436f 6d6d6572 6369616c 20526f6f 74204341 2031301e 170d3134 &#13;
+    30313136 31383132 32335a17 0d333430 31313631 38313232 335a304a 310b3009 &#13;
+    06035504 06130255 53311230 10060355 040a1309 4964656e 54727573 74312730 &#13;
+    25060355 0403131e 4964656e 54727573 7420436f 6d6d6572 6369616c 20526f6f &#13;
+    74204341 20313082 0222300d 06092a86 4886f70d 01010105 00038202 0f003082 &#13;
+    020a0282 020100a7 5019de3f 993dd433 46f16f51 6182b2a9 4f8f6789 5d84d953 &#13;
+    dd0c28d9 d7f0ffae 95437299 f9b55d7c 8ac142e1 315074d1 810d7ccd 9b21ab43 &#13;
+    e2acad5e 866ef309 8a1f5a32 bda2eb94 f9e85c0a ecff98d2 af71b3b4 539f4e87 &#13;
+    ef92bcbd ec4f3230 884b175e 57c453c2 f602978d d9622bbf 241f628d dfc3b829 &#13;
+    4b49783c 93608822 fc99da36 c8c2a2d4 2c540067 356e73bf 0258f0a4 dde5b0a2 &#13;
+    267acae0 36a51916 f5fdb7ef ae3f40f5 6d5a04fd ce34ca24 dc74231b 5d331312 &#13;
+    5dc40125 f630dd02 5d9fe0d5 47bdb4eb 1ba1bb49 49d89f5b 02f38ae4 2490e462 &#13;
+    4f4fc1af 8b0e7417 a8d17288 6a7a0149 ccb44679 c617b1da 981e0759 fa752185 &#13;
+    65dd9056 cefbaba5 609dc49d f952b08b bd87f98f 2b230a23 763bf733 e1c900f3 &#13;
+    69f94ba2 e04ebc7e 93398407 f744707e fe075ae5 b1acd118 ccf235e5 494908ca &#13;
+    56c93dfb 0f187d8b 3bc113c2 4d8fc94f 0e37e91f a10e6adf 622ecb35 0651792c &#13;
+    c82538f4 fa4ba789 5c9cd2e3 0d39864a 747cd559 87c23f4e 0c5c52f4 3df75282 &#13;
+    f1eaa3ac fd49341a 28f34188 3a13eee8 deff991d 5fbacbe8 1ef2b950 60c031d3 &#13;
+    73e5efbe a0ed330b 74be2020 c4676cf0 08037a55 807f464e 96a7f41e 3ee1f6d8 &#13;
+    09e13364 2b63d732 5e9ff9c0 7b0f786f 97bc939a f99c1290 787a8087 15d77274 &#13;
+    9c557478 b1bae16e 7004ba4f a0ba68c3 7bff31f0 733d3d94 2ab10b41 0ea0fe4d &#13;
+    88656b79 33b4d702 03010001 a3423040 300e0603 551d0f01 01ff0404 03020106 &#13;
+    300f0603 551d1301 01ff0405 30030101 ff301d06 03551d0e 04160414 ed4419c0 &#13;
+    d3f0068b eea47bbe 42e72654 c88e3676 300d0609 2a864886 f70d0101 0b050003 &#13;
+    82020100 0dae9032 f6a64b7c 44761961 1e2728cd 5e54ef25 bce30890 f929d7ae &#13;
+    6808e194 0058ef2e 2e7e5352 8cb65c07 ea88ba99 8b5094d7 8280df61 090093ad &#13;
+    0d14e6ce c1f23794 78b05f9c b3a273b8 8f059338 cd8d3eb0 b8fbc0cf b1f2ec2d &#13;
+    2d1bccec aa9ab3aa 60821b2d 3bc3843d 578a961e 9c75b8d3 30cd6008 8390d38e &#13;
+    54f14d66 c05d7403 40a3ee85 7ec21f77 9c06e8c1 a7185d52 95edc9dd 259e6dfa &#13;
+    a9eda33a 34d0597b daed50f3 35bfedeb 144d31c7 60f4daf1 879ce248 e2c6c537 &#13;
+    fb0610fa 75596631 4729da76 9a1ce982 aeef9ab9 51f78823 9a699562 3ce55580 &#13;
+    36d75402 fff1b95d ced4236f d845844a 5b65ef89 0cdd14a7 20cb18a5 25b40df9 &#13;
+    01f0a2d2 f400c874 8ea12a48 8e65db13 c4e22517 7debbe87 5b172054 51934a53 &#13;
+    030bec5d ca33ed62 fd45c72f 5bdc58a0 8039e6fa d7fe1314 a6ed3d94 4a4274d4 &#13;
+    c3775973 cd8f46be 5538effa e89132ea 97580422 de38c3cc bc6dc933 3a6a0a69 &#13;
+    3fa0c8ea 728f8c63 8623bd6d 3c969e95 e0494caa a2b92a1b 9c368178 edc3e846 &#13;
+    e2265944 751ed975 8951cd10 849d6160 cb5df997 224d8e98 e6e37ff6 5bbbaecd &#13;
+    ca4a816b 5e0bf351 e1742be9 7e27a7d9 99494ef8 a580db25 0f1c6362 8ac93367 &#13;
+    6b3c1083 c6addea8 cd168e8d f0073771 9ff2abfc 41f5c18b ec00375d 09e54e80 &#13;
+    effab15c 3806a51b 4ae1dc38 2d3cdcab 1f901ad5 4a9ceed1 706cccee f457f818 &#13;
+    ba846e87&#13;
+                  </cert>
+                </certificate>
+              </chain>
+              <chain>
+                <name>_SmartCallHome_ServerCA2</name>
+                <certificate>
+                  <serial>0509</serial>
+                  <cert-type>ca</cert-type>
+                  <cert>    308205b7 3082039f a0030201 02020205 09300d06 092a8648 86f70d01 01050500 &#13;
+    3045310b 30090603 55040613 02424d31 19301706 0355040a 13105175 6f566164 &#13;
+    6973204c 696d6974 6564311b 30190603 55040313 1251756f 56616469 7320526f &#13;
+    6f742043 41203230 1e170d30 36313132 34313832 3730305a 170d3331 31313234 &#13;
+    31383233 33335a30 45310b30 09060355 04061302 424d3119 30170603 55040a13 &#13;
+    1051756f 56616469 73204c69 6d697465 64311b30 19060355 04031312 51756f56 &#13;
+    61646973 20526f6f 74204341 20323082 0222300d 06092a86 4886f70d 01010105 &#13;
+    00038202 0f003082 020a0282 0201009a 18ca4b94 0d002daf 03298af0 0f81c8ae &#13;
+    4c19851d 089fab29 4485f32f 81ad321e 9046bfa3 86261a1e fe7e1c18 3a5c9c60 &#13;
+    172a3a74 8333307d 615411cb edabe0e6 d2a27ef5 6b6f18b7 0a0b2dfd e93eef0a &#13;
+    c6b310e9 dcc24617 f85dfda4 daff9e49 5a9ce633 e62496f7 3fba5b2b 1c7a35c2 &#13;
+    d667feab 66508b6d 28602bef d760c3c7 93bc8d36 91f37ff8 db1113c4 9c7776c1 &#13;
+    aeb7026a 817aa945 83e205e6 b956c194 378f4871 6322ec17 6507958a 4bdf8fc6 &#13;
+    5a0ae5b0 e35f5e6b 11ab0cf9 85eb44e9 f80473f2 e9fe5c98 8cf573af 6bb47ecd &#13;
+    d45c022b 4c39e1b2 95952d42 87d7d5b3 9043b76c 13f1dedd f6c4f889 3fd175f5 &#13;
+    92c391d5 8a88d090 ecdc6dde 89c26571 968b0d03 fd9cbf5b 16ac92db eafe797c &#13;
+    adebaff7 16cbdbcd 252be51f fb9a9fe2 51cc3a53 0c48e60e bdc9b476 0652e611 &#13;
+    13857263 0304e004 362b2019 02e874a7 1fb6c956 66f07525 dc67c10e 616088b3 &#13;
+    3ed1a8fc a3da1db0 d1b12354 df44766d ed41d8c1 b222b653 1cdf351d dca1772a &#13;
+    31e42df5 e5e5dbc8 e0ffe580 d70b63a0 ff33a10f ba2c1515 ea97b3d2 a2b5bef2 &#13;
+    8c961e1a 8f1d6ca4 6137b986 7333d797 969e237d 82a44c81 e2a1d1ba 675f9507 &#13;
+    a32711ee 16107bbc 454a4cb2 04d2abef d5fd0c51 ce506a08 31f991da 0c8f645c &#13;
+    03c33a8b 203f6e8d 673d3ad6 fe7d5b88 c95efbcc 61dc8b33 77d34432 35096204 &#13;
+    921610d8 9e2747fb 3b21e3f8 eb1d5b02 03010001 a381b030 81ad300f 0603551d &#13;
+    130101ff 04053003 0101ff30 0b060355 1d0f0404 03020106 301d0603 551d0e04 &#13;
+    1604141a 8462bc48 4c332504 d4eed0f6 03c41946 d1946b30 6e060355 1d230467 &#13;
+    30658014 1a8462bc 484c3325 04d4eed0 f603c419 46d1946b a149a447 3045310b &#13;
+    30090603 55040613 02424d31 19301706 0355040a 13105175 6f566164 6973204c &#13;
+    696d6974 6564311b 30190603 55040313 1251756f 56616469 7320526f 6f742043 &#13;
+    41203282 02050930 0d06092a 864886f7 0d010105 05000382 0201003e 0a164d9f &#13;
+    065ba8ae 715d2f05 2f67e613 4583c436 f6f3c026 0c0db547 645df8b4 72c946a5 &#13;
+    03182755 89787d76 ea963480 1720dce7 83f88dfc 07b8da5f 4d2e67b2 84fdd944 &#13;
+    fc775081 e67cb4c9 0d0b7253 f8760707 4147960c fbe08226 93558cfe 221f6065 &#13;
+    7c5fe726 b3f73290 9850d437 7155f692 2178f795 79faf82d 26876656 3077a637 &#13;
+    78335210 58ae3f61 8ef26ab1 ef187e4a 5963ca8d a256d5a7 2fbc561f cf39c1e2 &#13;
+    fb0aa815 2c7d4d7a 63c66c97 443cd26f c34a170a f890d257 a21951a5 2d9741da &#13;
+    074fa950 da908d94 46e13ef0 94fd1000 38f53be8 40e1b46e 561a20cc 6f588ded &#13;
+    2e458fd6 e9933fe7 b12cdf3a d6228cdc 84bb226f d0f8e4c6 39e90488 3cc3baeb &#13;
+    557a6d80 9924f56c 01fbf897 b0945beb fdd26ff1 77680d35 6423acb8 55a103d1 &#13;
+    4d4219dc f8755956 a3f9a849 79f8af0e b911a07c b76aed34 d0b62662 381a870c &#13;
+    f8e8fd2e d3907f07 912a1dd6 7e5c8583 99b03808 3fe95ef9 3507e4c9 626e577f &#13;
+    a75095f7 bac89be6 8ea201c5 d666bf79 61f33c1c e1b9825c 5da0c3e9 d848bd19 &#13;
+    a2111419 6eb2861b 683e4837 1a88b75d 965e9cc7 ef276208 e291195c d2f121dd &#13;
+    ba174282 97718153 31a99ff6 7d62bf72 e1a3931d cc8a265a 0938d0ce d70d8016 &#13;
+    b478a53a 874c8d8a a5d54697 f22c10b9 bc5422c0 01506943 9ef4b2ef 6df8ecda &#13;
+    f1e3b1ef df918f54 2a0b25c1 2619c452 100565d5 8210eac2 31cd2e&#13;
+                  </cert>
+                </certificate>
+              </chain>
+            </certificate>
+            <trustpool>
+              <policy>
+                <auto-import/>
+              </policy>
+            </trustpool>
+            <trustpoint>
+              <id>_SmartCallHome_ServerCA</id>
+              <validation-usage>false</validation-usage>
+              <crl>
+                <configure></configure>
+              </crl>
+            </trustpoint>
+            <trustpoint>
+              <id>_SmartCallHome_ServerCA2</id>
+              <validation-usage>false</validation-usage>
+              <crl>
+                <configure></configure>
+              </crl>
+            </trustpoint>
+          </ca>
+          <ipsec>
+            <security-association>
+              <pmtu-aging>infinite</pmtu-aging>
+            </security-association>
+          </ipsec>
+        </crypto>
+        <arp xmlns="http://cisco.com/ned/asa">
+          <timeout>14400</timeout>
+          <rate-limit>8192</rate-limit>
+          <permit-nonconnected>false</permit-nonconnected>
+        </arp>
+        <dns xmlns="http://cisco.com/ned/asa">
+          <server-group>
+            <name>DefaultDNS</name>
+            <domain-name>networkdev.tech</domain-name>
+          </server-group>
+        </dns>
+        <prompt xmlns="http://cisco.com/ned/asa">hostname</prompt>
+        <prompt xmlns="http://cisco.com/ned/asa">context</prompt>
+        <console xmlns="http://cisco.com/ned/asa">
+          <timeout>0</timeout>
+        </console>
+        <timeout xmlns="http://cisco.com/ned/asa">
+          <conn>1:00:00</conn>
+          <conn-holddown>0:00:15</conn-holddown>
+          <floating-conn>0:00:00</floating-conn>
+          <h225>1:00:00</h225>
+          <h323>0:05:00</h323>
+          <half-closed>0:10:00</half-closed>
+          <sctp>0:02:00</sctp>
+          <icmp>0:00:02</icmp>
+          <mgcp>0:05:00</mgcp>
+          <mgcp-pat>0:05:00</mgcp-pat>
+          <pat-xlate>0:00:30</pat-xlate>
+          <sip>0:30:00</sip>
+          <sip-disconnect>0:02:00</sip-disconnect>
+          <sip-invite>0:03:00</sip-invite>
+          <sip-provisional-media>0:02:00</sip-provisional-media>
+          <sip_media>0:02:00</sip_media>
+          <sunrpc>0:10:00</sunrpc>
+          <tcp-proxy-reassembly>0:01:00</tcp-proxy-reassembly>
+          <uauth>
+            <value>0:05:00</value>
+            <absolute/>
+          </uauth>
+          <igp>
+            <stale-route>0:01:10</stale-route>
+          </igp>
+          <udp>0:02:00</udp>
+          <xlate>3:00:00</xlate>
+        </timeout>
+        <call-home xmlns="http://cisco.com/ned/asa">
+          <profile>
+            <id>CiscoTAC-1</id>
+            <active>false</active>
+            <destination>
+              <address>
+                <http>https://tools.cisco.com/its/service/oddce/services/DDCEService</http>
+                <email>callhome@cisco.com</email>
+              </address>
+              <transport-method>http</transport-method>
+            </destination>
+            <subscribe-to-alert-group>
+              <id>configuration</id>
+              <periodic>
+                <monthly></monthly>
+              </periodic>
+            </subscribe-to-alert-group>
+            <subscribe-to-alert-group>
+              <id>diagnostic</id>
+            </subscribe-to-alert-group>
+            <subscribe-to-alert-group>
+              <id>environment</id>
+            </subscribe-to-alert-group>
+            <subscribe-to-alert-group>
+              <id>inventory</id>
+              <periodic>
+                <monthly></monthly>
+              </periodic>
+            </subscribe-to-alert-group>
+            <subscribe-to-alert-group>
+              <id>telemetry</id>
+              <periodic>
+                <daily></daily>
+              </periodic>
+            </subscribe-to-alert-group>
+          </profile>
+          <profile>
+            <id>License</id>
+            <destination>
+              <address>
+                <http>https://tools.cisco.com/its/service/oddce/services/DDCEService</http>
+              </address>
+              <transport-method>http</transport-method>
+            </destination>
+          </profile>
+        </call-home>
+      </config>
+    </device>
+  </devices>
+</config>
