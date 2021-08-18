@@ -19,3 +19,4 @@ storedstate
 **/shared-jar/*
 **/src/java/build/*
 **/*.pyc
+*.log
